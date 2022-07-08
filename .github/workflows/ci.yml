@@ -19,16 +19,16 @@ jobs:
         run: pwd
 
       - name: Create artifact directory
-        run: mkdir %HOMEPATH%\artifact
+        run: mkdir artifact
 
       - name: Build
-        run: go build -o %HOMEPATH%\artifact
+        run: go build -o artifact
 
       - name: Show build
-        run: dir %HOMEPATH%\artifact
+        run: dir artifact
 
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
           name: my-artifact
-          path: "%HOMEPATH%\artifact"
+          path: artifact
