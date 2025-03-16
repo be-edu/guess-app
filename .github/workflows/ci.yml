@@ -2,15 +2,15 @@ name: build-and-push-guess-app
 on: [push]
 jobs:
   build-and-push:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout source code from git repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set up Go
-        uses: actions/setup-go@v3
+        uses: actions/setup-go@v5
         with:
-          go-version: '1.19'
+          go-version: '1.24'
 
       - name: Show go version
         run: go version
@@ -25,10 +25,10 @@ jobs:
         run: go build -o artifact
 
       - name: Show build
-        run: dir artifact
+        run: ls -l ~/artifact
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: my-artifact
           path: artifact
