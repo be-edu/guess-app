@@ -21,7 +21,7 @@ jobs:
       - name: Build
         run: go build -o artifact/guess_app
 
-      - name: Show build
+      - name: Show artifact
         run: ls -l artifact
 
       - name: Upload artifact
