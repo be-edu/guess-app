@@ -18,14 +18,11 @@ jobs:
       - name: Print working directory
         run: pwd
 
-      - name: Create artifact directory
-        run: mkdir ~/artifact
-
       - name: Build
         run: go build -o artifact
 
       - name: Show build
-        run: ls -l ~/artifact
+        run: ls -l artifact
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
