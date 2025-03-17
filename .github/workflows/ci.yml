@@ -19,7 +19,7 @@ jobs:
         run: pwd
 
       - name: Build
-        run: go build -o artifact
+        run: go build -o artifact/guess_app
 
       - name: Show build
         run: ls -l artifact
