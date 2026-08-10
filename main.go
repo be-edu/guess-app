@@ -55,5 +55,8 @@ func main() {
 	}
 
 	fmt.Println("The game is now finished. Press Enter to close the application.")
-	reader.ReadString('\n')
+	_, err := reader.ReadString('\n')
+	if err != nil {
+		log.Fatal(err)
+	}
 }
